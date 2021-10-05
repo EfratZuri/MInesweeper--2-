@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script defer src="js/variabels.js"></script>
+		<script defer src="js/main.js"></script>
+		<script defer src="js/display.js"></script>
+		<script defer src="js/game.js"></script>
+		<script defer src="js/util.js"></script>
+		<link rel="stylesheet" href="../CSS/general.css" />
+		<link rel="stylesheet" href="../CSS/style.css" />
+		<title>minesweeper</title>
+	</head>
+	<body onload="init()">
+		<div class="container">
+			<header class="header">
+				<h1 class="main-header">minesweeper</h1>
+
+				<div class="manually-create-box hidden">
+					<button class="btn manually-create" onclick="manuallyCreate()">
+						manually create
+					</button>
+					<span></span>
+				</div>
+			</header>
+			<div class="details">
+				<div class="timer-box">00:00</div>
+				<button class="btn btn-restart" onclick="init()">☺️</button>
+				<div class="lives">❤️❤️❤️</div>
+			</div>
+			<div class="records">
+				<h2>Your records:</h2>
+				<p class="record-beginner">Beginner: <span>⛔️</span></p>
+				<p class="record-medium">Medium: <span>⛔️</span></p>
+				<p class="record-expert">Expert: <span>⛔️</span></p>
+			</div>
+			<form class="form">
+				<div class="f-beginner">
+					<input
+						type="checkbox"
+						class="checkbox checkbox-beginner"
+						onclick="checkboxClicked(this,'beginner')"
+					/>
+					<label for>Beginner(4*4)</label>
+				</div>
+				<div class="f-medium">
+					<input
+						type="checkbox"
+						class="checkbox checkbox-medium"
+						onclick="checkboxClicked(this,'medium')"
+					/>
+					<label for>Medium(8*8)</label>
+				</div>
+				<div class="f-expert">
+					<input
+						type="checkbox"
+						class="checkbox checkbox-expert"
+						onclick="checkboxClicked(this,'expert')"
+					/>
+					<label for>Expert!(12*12)</label>
+				</div>
+			</form>
+			<div class="app">
+				<div class="actions">
+					<div class="hints-box" onclick="hintClicked()">💡💡💡</div>
+
+					<button class="btn btn-undo" onclick="undoClicked()">Undo</button>
+					<button class="btn btn-7-boom" onclick="sevenBoom()">7 BOOM!</button>
+					<div class="safe-btn-box">
+						<button class="btn safe-click" onclick="safeClickClicked()">
+							safe click
+						</button>
+						<span>3 remain</span>
+					</div>
+				</div>
+				<table class="board"></table>
+			</div>
+		</div>
+	</body>
+</html>

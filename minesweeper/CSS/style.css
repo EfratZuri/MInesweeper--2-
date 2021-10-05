@@ -1,0 +1,131 @@
+.details {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+.hints-box {
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 3rem;
+	cursor: pointer;
+}
+.form {
+	display: flex;
+	gap: 2rem;
+
+	font-size: 1.8rem;
+	justify-content: center;
+
+	transition: opacity 1s;
+}
+.app {
+	display: flex;
+	transition: opacity 1s;
+}
+
+table {
+	box-sizing: border-box;
+	/* text-indent: initial; */
+	/* border-spacing: 2px; */
+	/* border-collapse: collapse; */
+	margin: 0 auto;
+}
+td {
+	height: 4rem;
+	width: 4rem;
+
+	font-weight: 600;
+	font-size: 1.8rem;
+	font-family: inherit;
+
+	cursor: pointer;
+	margin: 0 auto;
+
+	background-color: #f7f7f7;
+	transition: background-color 0.3s ease-out;
+}
+.unopened {
+	position: relative;
+	box-sizing: inherit;
+
+	background-color: #777;
+}
+.unopened::before {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	z-index: 1;
+}
+
+.end {
+	animation: goDown 3s ease-out;
+}
+.manually-create-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.manually-create {
+	box-shadow: 0 1rem 1.6rem rgba(0, 0, 0, 0.09);
+
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	background-color: #bee1e6;
+	border-radius: 2rem;
+	transition: all 0.5s;
+}
+.manually-create-box span {
+	color: #d00000;
+	font-size: 1.4rem;
+}
+.click {
+	animation: s 1s ease-out;
+}
+
+@keyframes goDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-50rem);
+	}
+	80% {
+		transform: translateY(1rem);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes s {
+	0% {
+		opacity: 1;
+		transform: scale(1.5);
+	}
+	80% {
+		transform: scale(2);
+	}
+	100% {
+		opacity: 0;
+		/* transform: translateY(0); */
+	}
+}
+
+.btn-undo {
+	box-shadow: 0 1rem 1.6rem rgba(0, 0, 0, 0.09);
+	background-image: linear-gradient(to top left, #f9dc5c, #fdf8e1);
+}
+.safe-click {
+	background-image: linear-gradient(to top left, #55a630, #eeef20);
+}
+.btn-7-boom {
+	background-image: linear-gradient(to top left, #eb1d1d, #e75c5c);
+}
+.safe-click:hover {
+	background-image: linear-gradient(to top left, #415d43, #eeef20);
+}
